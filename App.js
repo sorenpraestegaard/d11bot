@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var hellobot = require('./d11bot');
+var d11bot = require('./d11bot');
 
 var app = express();
 var port = process.env.PORT || 3000;
