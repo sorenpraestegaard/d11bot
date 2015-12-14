@@ -14,9 +14,9 @@ module.exports = function (request, response, next) {
 
   // avoid an infinite loop
   if (userName !== 'slackbot') {
-    responses.push("test");
-    obj = JSON.stringify(obj);
-    jf.writeFileSync(WEAS_ConfigFile, obj); // Writes object to file
+    //responses.push("test");
+    //obj = JSON.stringify(obj);
+    //jf.writeFileSync(WEAS_ConfigFile, obj); // Writes object to file
     return response.status(200).json(botPaylod);
   }
   else {
