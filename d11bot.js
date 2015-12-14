@@ -1,5 +1,6 @@
 var _ = require('lodash');
 var responses = require('./responses');
+var jf = require('jsonfile'); // Requires Reading/Writing JSON   
 
 module.exports = function (request, response, next) {
 
@@ -13,6 +14,9 @@ module.exports = function (request, response, next) {
 
   // avoid an infinite loop
   if (userName !== 'slackbot') {
+    responses.push("test");
+    obj = JSON.stringify(obj);
+    jf.writeFileSync(WEAS_ConfigFile, obj); // Writes object to file
     return response.status(200).json(botPaylod);
   }
   else {
